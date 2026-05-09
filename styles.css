@@ -1,0 +1,883 @@
+/* Основные стили для сайта-визитки салона красоты */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+:root {
+  --primary: #d14d9b;
+  --primary-dark: #b83f87;
+  --bg: #fff7fb;
+  --white: #fff;
+  --gray: #666;
+}
+
+body {
+  background: var(--bg);
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* HEADER - ВЫШЕ ОВЕРЛЕЯ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--primary);
+  cursor: pointer;
+  transition: opacity 0.3s;
+  padding: 5px 0;
+  user-select: none;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://n1s2.hsmedia.ru/cd/70/9a/cd709a7eae20fd0a58c5364a9e1302ef/1000x745_0xac120003_861746761603794264.webp') no-repeat center/cover;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* ОБЩАЯ КНОПКА */
+.btn {
+  background: var(--primary);
+  padding: 12px 26px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(209, 77, 155, 0.3);
+}
+
+/* GENERAL SECTIONS */
+.section {
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* ================================ */
+/* SERVICES SECTION - МИНИМАЛИСТИЧНО */
+/* ================================ */
+
+#services {
+  padding-bottom: 35px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+  margin-bottom: 5px;
+}
+
+.service-card {
+  padding: 20px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(209, 77, 155, 0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(209, 77, 155, 0.1);
+}
+
+.service-card h3 {
+  color: var(--primary);
+  margin-bottom: 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: var(--gray);
+  line-height: 1.5;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Кнопка Прайс услуг - прилегает плотно */
+#openPrice {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+  padding: 10px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--primary);
+  box-shadow: 0 3px 10px rgba(209, 77, 155, 0.15);
+  border-radius: 25px;
+  border: none;
+  transition: all 0.25s ease;
+  color: white;
+  text-decoration: none;
+}
+
+#openPrice:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(209, 77, 155, 0.25);
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* CONTACT FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(209, 77, 155, 0.1);
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(209, 77, 155, 0.3);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: #f7eaf2;
+  color: #666;
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+/* MAP SECTION */
+.map-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.map-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* MAP WRAPPER */
+.map-wrapper {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 4px;
+  background: linear-gradient(135deg, #ff8a8a, #ffd0d0, #fff);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
+}
+
+.map-wrapper:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+  display: block;
+}
+
+/* АДАПТИВ КАРТЫ */
+@media (max-width: 600px) {
+  .map-wrapper {
+    height: 300px;
+    border-radius: 14px;
+  }
+  .map-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 400px) {
+  .map-wrapper {
+    height: 250px;
+  }
+}
+
+/* ================================ */
+/* 🌫 OVERLAY - ПОД ХЕДЕРОМ И МЕНЮ */
+/* ================================ */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@supports not (backdrop-filter: blur(6px)) {
+  .menu-overlay {
+    background: rgba(255, 247, 251, 0.7);
+  }
+}
+
+/* ================================ */
+/* 🍔 BURGER MENU */
+/* ================================ */
+
+/* Базовые стили бургера */
+.burger {
+  display: none;
+  flex-direction: column;
+  width: 32px;
+  cursor: pointer;
+  z-index: 2001;
+  position: relative;
+}
+
+.burger span {
+  height: 3px;
+  background: var(--primary);
+  margin: 4px 0;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+/* Анимация активного бургера */
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ================================ */
+/* 📱 МОБИЛЬНАЯ ВЕРСИЯ (≤ 768px) */
+/* ================================ */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+  
+  /* Навигация */
+  .nav {
+    position: fixed;
+    top: 70px;
+    right: -220px;
+    width: 200px;
+    background: var(--white);
+    padding: 20px 25px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    border-radius: 12px 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s ease;
+    z-index: 2000;
+  }
+  
+  .nav.open {
+    right: 0;
+  }
+  
+  .nav a {
+    margin: 12px 0;
+    font-size: 18px;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+  }
+  
+  .nav a:hover {
+    color: var(--primary);
+  }
+}
+
+/* ================================ */
+/* 💻 ДЕСКТОПНАЯ ВЕРСИЯ (≥ 769px) */
+/* ================================ */
+@media (min-width: 769px) {
+  /* Десктопная навигация */
+  .nav {
+    display: flex;
+    gap: 24px;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .nav a {
+    margin: 0;
+    font-size: 16px;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 8px 0;
+    font-weight: 500;
+  }
+  
+  .nav a:hover {
+    color: var(--primary);
+  }
+  
+  /* Бургер скрыт на десктопе */
+  .burger {
+    display: none;
+  }
+}
+
+/* ================================ */
+/* ✨ АНИМАЦИИ И ЭФФЕКТЫ */
+/* ================================ */
+
+/* Плавное появление секций */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Плавный скролл для всех браузеров */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 40px;
+}
+
+/* Для старых браузеров */
+[id] {
+  scroll-margin-top: 40px;
+}
+
+/* ================================ */
+/* 💎 PRICE MODAL - ОБНОВЛЕННЫЙ СТИЛЬ */
+/* ================================ */
+
+.price-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 247, 251, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.price-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.price-modal__content {
+  background: var(--white);
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 1px solid rgba(209, 77, 155, 0.15);
+}
+
+.price-modal__close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: var(--primary);
+  line-height: 1;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.price-modal__close:hover {
+  background: rgba(209, 77, 155, 0.1);
+}
+
+.price-modal h2 {
+  text-align: center;
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.price-modal__subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ================================ */
+/* НОВЫЙ ДИЗАЙН КАРТОЧЕК ПРАЙСА */
+/* ================================ */
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.price-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(209, 77, 155, 0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(209, 77, 155, 0.15);
+  border-color: rgba(209, 77, 155, 0.3);
+}
+
+.price-card__image {
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #f9c5d1, #fbe7ef);
+  position: relative;
+}
+
+.price-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.price-card__category {
+  font-size: 14px;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.price-card__title {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.price-card__description {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.price-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.price-card__price {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.price-card__action {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.price-card__action:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(209, 77, 155, 0.3);
+}
+
+/* Для карточек без изображений */
+.price-card:not(:has(.price-card__image img)) .price-card__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f0f0, #f8f8f8);
+}
+
+.price-card:not(:has(.price-card__image img)) .price-card__image::before {
+  content: "✨";
+  font-size: 40px;
+  opacity: 0.7;
+}
+
+/* ================================ */
+/* АДАПТИВ МОДАЛЬНОГО ОКНА */
+/* ================================ */
+
+@media (max-width: 768px) {
+  .price-modal__content {
+    padding: 30px 20px;
+    margin: 10px;
+    border-radius: 18px;
+  }
+  
+  .price-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .price-modal h2 {
+    font-size: 28px;
+  }
+  
+  .price-card__image {
+    height: 180px;
+  }
+  
+  .price-card__title {
+    font-size: 20px;
+  }
+  
+  .price-card__price {
+    font-size: 22px;
+  }
+  
+  .header {
+    padding: 15px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+  }
+  
+  .section {
+    padding: 40px 20px;
+  }
+  
+  .service-card {
+    padding: 18px 16px;
+  }
+  
+  .service-card h3 {
+    font-size: 18px;
+  }
+  
+  #openPrice {
+    padding: 10px 24px;
+    font-size: 15px;
+  }
+  
+  .services-grid {
+    gap: 14px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-modal__content {
+    padding: 25px 15px;
+  }
+  
+  .price-card {
+    padding: 20px;
+  }
+  
+  .price-card__image {
+    height: 160px;
+  }
+  
+  .price-modal h2 {
+    font-size: 24px;
+  }
+  
+  .price-card__title {
+    font-size: 18px;
+  }
+  
+  .price-card__price {
+    font-size: 20px;
+  }
+  
+  .price-card__action {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+  
+  .hero h1 {
+    font-size: 28px;
+  }
+  
+  .section h2 {
+    font-size: 26px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ================================ */
+/* 🎨 СТИЛЬНЫЕ НАДПИСИ ВМЕСТО ФОТОГРАФИЙ */
+/* ================================ */
+
+.price-card__image.service-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f9c5d1, #ffb6c1);
+  position: relative;
+  overflow: hidden;
+}
+
+.price-card__image.service-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(255,255,255,0.1) 0%, 
+    rgba(255,255,255,0.2) 50%, 
+    rgba(255,255,255,0.1) 100%);
+  z-index: 1;
+}
+
+.price-card__image.service-label .service-text {
+  position: relative;
+  z-index: 2;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: center;
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+/* Разные стили для разных категорий услуг */
+.price-card__image.hair-service {
+  background: linear-gradient(135deg, #f9c5d1, #ffb6c1);
+}
+
+.price-card__image.hair-service .service-text {
+  color: #b83f87;
+}
+
+.price-card__image.nails-service {
+  background: linear-gradient(135deg, #ffd6e7, #ffc2d1);
+}
+
+.price-card__image.nails-service .service-text {
+  color: #d14d9b;
+}
+
+.price-card__image.cosmetology-service {
+  background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+}
+
+.price-card__image.cosmetology-service .service-text {
+  color: #9b4dd1;
+}
+
+/* Декоративные элементы */
+.price-card__image.service-label::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgba(255,255,255,0.3)'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  opacity: 0.5;
+}
+
+/* Адаптив для надписей */
+@media (max-width: 768px) {
+  .price-card__image.service-label .service-text {
+    font-size: 24px;
+    padding: 15px;
+  }
+  
+  .price-card__image.service-label::after {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-card__image.service-label .service-text {
+    font-size: 20px;
+    padding: 10px;
+  }
+}

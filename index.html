@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мирца</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <style>
+    /* Временные стили для проверки формы */
+    .contact-form input.error-field,
+    .contact-form textarea.error-field {
+      border-color: #d14d9b;
+      box-shadow: 0 0 0 3px rgba(209,77,155,0.1);
+    }
+  </style>
+</head>
+<body>
+	
+  <header id="top" class="header">
+    <div class="logo">Салон красоты Мирца</div>
+    <nav class="nav">
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Галерея</a>
+		<a href="#map">Мы на карте</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+	<div class="page">
+  <section class="hero">
+    <h1>Добро пожаловать в наш салон красоты</h1>
+    <p>Профессиональный уход за вашей красотой</p>
+    <a href="#contacts" class="btn">Записаться</a>
+  </section>
+
+  <section id="about" class="section">
+    <h2>О нас</h2>
+    <p>Наш салон красоты предоставляет профессиональные услуги по уходу за волосами, ногтями и кожей. Мы используем только качественные материалы и современное оборудование.</p>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Наши услуги</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Парикмахерские услуги</h3>
+        <p>Стрижки, окрашивание, уход.</p>
+      </div>
+      <div class="service-card">
+        <h3>Маникюр и педикюр</h3>
+        <p>Гель-лак, укрепление, дизайн.</p>
+      </div>
+      <div class="service-card">
+        <h3>Косметология</h3>
+        <p>Чистка лица, уходовые процедуры.</p>
+      </div>
+		</div>
+		<a href="#" class="btn" id="openPrice">Прайс услуг</a>
+  </section>
+
+  <section id="gallery" class="section gallery">
+    <h2>Галерея</h2>
+    <div class="gallery-grid">
+      <img src="images/makeup.png" alt="makeup" />
+      <img src="images/styling.png" alt="styling" />
+      <img src="images/manicure.png" alt="manicure" />
+      <img src="images/interior1.png" alt="interior" />
+    </div>
+  </section>
+
+	<section id="map" class="map-section">
+    <h2 class="map-title">Мы на карте</h2>
+    
+    <div class="map-wrapper">
+        <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=43.058604%2C44.061598&mode=search&oid=1846280213&ol=biz&z=14.69"
+            frameborder="0"
+            allowfullscreen="true">
+        </iframe>
+    </div>
+	</section>	
+
+  <section id="contacts" class="section">
+    <h2>Контакты</h2>
+    <p>Адрес: Московская ул., 99, Пятигорск</p>
+    <p>Телефон: +7 (938) 653-65-65</p>
+    <form class="contact-form" method="POST" action="telegram.php" novalidate>
+
+  <div class="form-group">
+    <input type="text" name="name" id="name" placeholder="Ваше имя" required>
+    <div class="error"></div>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="phone" id="phone" placeholder="Ваш телефон" required>
+    <div class="error"></div>
+  </div>
+
+  <div class="form-group">
+    <textarea name="message" id="message" placeholder="Ваше сообщение" required></textarea>
+    <div class="error"></div>
+  </div>
+
+  <button type="submit">Отправить</button>
+	
+</form>
+	
+  </section>
+
+  <footer class="footer">© 2025 Салон красоты Мирца. Все права защищены.</footer>
+	
+	<script src="validate.js"></script>
+	<script src="menu.js"></script>
+	
+	<script>
+  // Автоматическое обновление версии CSS
+  const cssLink = document.querySelector('link[href="styles.css"]');
+
+  if (cssLink) {
+    const version = Date.now();
+    cssLink.href = `styles.css?v=${version}`;
+  }
+	</script>
+	</div>
+	<div class="menu-overlay"></div>
+	<div class="price-modal" id="priceModal">
+  <div class="price-modal__content">
+    <button class="price-modal__close" id="closePrice">×</button>
+    <h2>Прайс услуг</h2>
+    <p class="price-modal__subtitle">Выберите услугу и запишитесь прямо сейчас</p>
+
+    <div class="price-grid">
+
+      <div class="price-card">
+        <div class="price-card__image service-label hair-service">
+          <div class="service-text">Укладка волос</div>
+		</div>        
+        <p class="price-card__description">Выбирая "Укладку волос", вы выбираете качество. Профессиональный подход и уютная атмосфера ждут вас. Салон красоты Мирца Пятигорск.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">2000 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label hair-service">
+          <div class="service-text">Укладка локоны на брашинг</div>
+        </div>
+        <p class="price-card__description">Сочетание заботы и мастерства. Комфорт, внимание к деталям и превосходный результат.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">1400 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label hair-service">
+          <div class="service-text">Укладка волос</div>
+        </div>
+        <p class="price-card__description">Профессиональный подход и уютная атмосфера для идеального результата.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">1200 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label hair-service">
+          <div class="service-text">Женская стрижка</div>
+        </div>
+        <p class="price-card__description">Индивидуальный подход и подчёркивание вашей естественной красоты.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">1800 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label hair-service">
+          <div class="service-text">Мужская стрижка</div>
+        </div>
+        <p class="price-card__description">Чёткие линии, стиль и уверенный внешний вид.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">1000 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label hair-service">
+          <div class="service-text">Окрашивание в один тон</div>
+        </div>
+        <p class="price-card__description">Глубокий цвет и блеск с бережным отношением к волосам.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">3500 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label hair-service">
+          <div class="service-text">Сложное окрашивание</div>
+        </div>
+        <p class="price-card__description">AirTouch, Balayage, Shatush — индивидуальный подбор оттенков.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">от 6000 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label hair-service">
+          <div class="service-text">Ботокс / Кератин</div>
+        </div>
+        <p class="price-card__description">Восстановление структуры, гладкость и блеск волос.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">3000 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label nails-service">
+          <div class="service-text">Маникюр классический</div>
+        </div>
+        <p class="price-card__description">Аккуратная обработка и эстетика в каждой детали.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">900 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label nails-service">
+          <div class="service-text">Маникюр с гель-лаком</div>
+        </div>
+        <p class="price-card__description">Стойкое покрытие и ухоженный вид до 3 недель.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">1600 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label nails-service">
+          <div class="service-text">Педикюр</div>
+        </div>
+        <p class="price-card__description">Комфортная процедура и аккуратный результат.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">1800 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-card__image service-label cosmetology-service">
+          <div class="service-text">Уход за лицом</div>
+        </div>
+        <p class="price-card__description">Свежесть, сияние и профессиональный уход.</p>
+        <div class="price-card__footer">
+          <span class="price-card__price">2500 ₽</span>
+          <a href="#contacts" class="price-card__action close-price-btn">Записаться</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
