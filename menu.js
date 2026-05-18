@@ -128,13 +128,42 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
-    // Закрытие модального окна при клике на кнопку "Записаться" в карточках
+    function formatBookingMessage(serviceName) {
+        return `Здравствуйте! Хочу записаться на услугу «${serviceName}»`;
+    }
+
+    function fillBookingMessageFromCard(btn) {
+        const card = btn.closest(".price-card");
+        const messageInput = document.getElementById("message");
+        if (!card || !messageInput) return;
+
+        const serviceName = card.querySelector(".service-text")?.textContent.trim();
+        if (!serviceName) return;
+
+        messageInput.value = formatBookingMessage(serviceName);
+        messageInput.classList.remove("error-field");
+        messageInput.classList.add("message-prefilled");
+
+        const clearHint = () => messageInput.classList.remove("message-prefilled");
+        messageInput.addEventListener("input", clearHint, { once: true });
+    }
+
+    // Закрытие модального окна и текст заявки при клике «Записаться» в карточках
     if (closePriceBtns.length > 0) {
         closePriceBtns.forEach(btn => {
             btn.addEventListener("click", () => {
+                fillBookingMessageFromCard(btn);
+
                 if (priceModal) {
                     priceModal.classList.remove("active");
                     document.body.style.overflow = "";
+                }
+
+                const messageInput = document.getElementById("message");
+                if (messageInput) {
+                    setTimeout(() => {
+                        messageInput.focus({ preventScroll: true });
+                    }, 500);
                 }
             });
         });
