@@ -1,3 +1,6 @@
+// Временно: true — без отправки в Telegram, редирект на thankyou.html
+const TELEGRAM_DISABLED = true;
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
   if (!form) return console.warn("Форма не найдена на странице (class .contact-form).");
@@ -72,9 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!valid) {
       evt.preventDefault();
-      // можно сфокусировать первое неверное поле:
       const firstErr = document.querySelector(".error-field");
       if (firstErr) firstErr.focus();
+      return;
+    }
+
+    if (TELEGRAM_DISABLED) {
+      evt.preventDefault();
+      window.location.href = "thankyou.html";
     }
   });
 

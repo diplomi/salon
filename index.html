@@ -40,9 +40,64 @@
     <a href="#contacts" class="btn">Записаться</a>
   </section>
 
-  <section id="about" class="section">
+  <section id="about" class="section section--about">
     <h2>О нас</h2>
-    <p>Наш салон красоты предоставляет профессиональные услуги по уходу за волосами, ногтями и кожей. Мы используем только качественные материалы и современное оборудование.</p>
+    <p class="about-intro">Наш салон красоты предоставляет профессиональные услуги по уходу за волосами, ногтями и кожей. Мы используем только качественные материалы и современное оборудование.</p>
+
+    <div class="about-masters">
+      <h3 class="about-masters__title">Наши мастера</h3>
+      <div class="masters-grid">
+        <article class="master-card">
+          <img class="master-card__avatar" src="images/masters/lykova.jpg" alt="Лыкова Екатерина" width="72" height="72" loading="lazy">
+          <h4 class="master-card__name">Лыкова Екатерина</h4>
+          <p class="master-card__role">Косметолог</p>
+          <p class="master-card__rating">★ 5.0 <span>(11)</span></p>
+        </article>
+
+        <article class="master-card">
+          <img class="master-card__avatar" src="images/masters/melnikova.jpg" alt="Мельникова Мария" width="72" height="72" loading="lazy">
+          <h4 class="master-card__name">Мельникова Мария</h4>
+          <p class="master-card__role">Мастер ногтевого сервиса, подолог</p>
+          <p class="master-card__rating">★ 5.0 <span>(5)</span></p>
+        </article>
+
+        <article class="master-card">
+          <img class="master-card__avatar" src="images/masters/azoeva.jpg" alt="Азоева Лениза" width="72" height="72" loading="lazy">
+          <h4 class="master-card__name">Азоева Лениза</h4>
+          <p class="master-card__role">Косметолог-массажист</p>
+          <p class="master-card__rating">★ 5.0 <span>(1)</span></p>
+        </article>
+
+        <article class="master-card">
+          <img class="master-card__avatar" src="images/masters/chizhova.jpg" alt="Чижова Юлия" width="72" height="72" loading="lazy">
+          <h4 class="master-card__name">Чижова Юлия</h4>
+          <p class="master-card__role">Парикмахер-колорист</p>
+          <p class="master-card__rating">★ 5.0 <span>(9)</span></p>
+        </article>
+
+        <article class="master-card">
+          <img class="master-card__avatar" src="images/masters/predkus.jpg" alt="Предкус Наталья" width="72" height="72" loading="lazy">
+          <h4 class="master-card__name">Предкус Наталья</h4>
+          <p class="master-card__role">Косметолог</p>
+          <p class="master-card__rating">★ 5.0 <span>(16)</span></p>
+        </article>
+
+        <article class="master-card">
+          <img class="master-card__avatar" src="images/masters/shvets.jpg" alt="Швец Инна" width="72" height="72" loading="lazy">
+          <h4 class="master-card__name">Швец Инна</h4>
+          <p class="master-card__role">Мастер ногтевого сервиса</p>
+          <p class="master-card__rating">★ 5.0 <span>(30)</span></p>
+        </article>
+
+        <article class="master-card">
+          <img class="master-card__avatar" src="images/masters/miftahova.jpg" alt="Мифтахова Ирина" width="72" height="72" loading="lazy">
+          <h4 class="master-card__name">Мифтахова Ирина</h4>
+          <p class="master-card__role">Парикмахер-колорист</p>
+          <p class="master-card__rating">★ 5.0 <span>(4)</span></p>
+        </article>
+
+      </div>
+    </div>
   </section>
 
   <section id="services" class="section">
@@ -90,7 +145,7 @@
     <h2>Контакты</h2>
     <p>Адрес: Московская ул., 99, Пятигорск</p>
     <p>Телефон: +7 (938) 653-65-65</p>
-    <form class="contact-form" method="POST" action="telegram.php" novalidate>
+    <form class="contact-form" method="POST" action="#" novalidate>
 
   <div class="form-group">
     <input type="text" name="name" id="name" placeholder="Ваше имя" required>
@@ -113,7 +168,7 @@
 	
   </section>
 
-  <footer class="footer">© 2025 Салон красоты Мирца. Все права защищены.</footer>
+  <footer class="footer">© 2026 Салон красоты Мирца. Все права защищены.</footer>
 	
 	<script src="validate.js"></script>
 	<script src="menu.js"></script>
@@ -259,7 +314,7 @@
       </div>
 
       <div class="price-card">
-        <div class="price-card__image service-label cosmetology-service">
+        <div class="price-card__image service-label nails-service">
           <div class="service-text">Уход за лицом</div>
         </div>
         <p class="price-card__description">Свежесть, сияние и профессиональный уход.</p>
